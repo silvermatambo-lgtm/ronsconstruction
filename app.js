@@ -77,7 +77,7 @@ let observer;
 const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function initReveals(){if(observer)observer.disconnect();observer=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add("visible");observer.unobserve(en.target);}})},{threshold:.08,rootMargin:"0px 0px -35px 0px"});$$(".is-active .reveal").forEach(el=>{el.classList.remove("visible");if(reduce)el.classList.add("visible");else observer.observe(el)});}
 let headingObserver;
-function initHeadings(){if(headingObserver)headingObserver.disconnect();headingObserver=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){animateHeading(en.target);headingObserver.unobserve(en.target);}})},{threshold:.3});$$(".is-active .typed-heading").forEach(el=>{if(el.dataset.text){if(reduce){el.innerHTML=el.dataset.text;continue;}el.textContent="";headingObserver.observe(el);}});}
+function initHeadings(){if(headingObserver)headingObserver.disconnect();headingObserver=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){animateHeading(en.target);headingObserver.unobserve(en.target);}})},{threshold:.3});$$(".is-active .typed-heading").forEach(el=>{if(el.dataset.text){if(reduce){el.innerHTML=el.dataset.text;return;}el.textContent="";headingObserver.observe(el);}});}
 function animateHeading(el){const text=el.dataset.text.replace(/<br>/g,"\n");el.style.whiteSpace="pre-line";el.classList.add("typing");let i=0;const typing=setInterval(()=>{el.textContent=text.slice(0,++i);if(i>=text.length){clearInterval(typing);el.classList.remove("typing");}},Math.max(20,Math.floor(1100/Math.max(1,text.length))));}
 const slides=[
 {top:"WE BUILD",typing:"WITH PURPOSE.",desc:"From the foundation to the finishing touch, we bring care, skill and attention to every project."},
@@ -87,7 +87,7 @@ const slides=[
 let active=0,heroTimer,typingTimer,progressTimer,heroStart=Date.now();
 function heroSlide(i){
  active=(i+slides.length)%slides.length;
- $$(".hero-photo").forEach((el,j)=>el.classList.toggle("active",i===j));
+ $$(".hero-photo").forEach((el,j)=>el.classList.toggle("active",active===j));
  $("#hero-static").textContent=slides[active].top;
  $("#hero-desc").textContent=slides[active].desc;$("#hero-index").innerHTML="0"+(active+1)+" <i>/ 03</i>";
  clearInterval(typingTimer);$("#hero-type").textContent="";
