@@ -1,16 +1,17 @@
 (()=>{
 "use strict";
 const WA="27833204202";
+const media=name=>"/media/"+name+".webp";
 const stock={
- build:"https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=950&q=80",
- renovation:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=950&q=80",
- plaster:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=950&q=80",
- painting:"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=950&q=80",
- roofing:"https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=950&q=80",
- bathroom:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=950&q=80",
- paving:"https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=950&q=80",
- maintenance:"https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=950&q=80",
- ceilings:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=950&q=80"
+ build:media("construction-site"),
+ renovation:media("brickwork-extension"),
+ plaster:media("masonry-wall"),
+ painting:media("perimeter-wall"),
+ roofing:media("roof-tile-installation"),
+ bathroom:media("bathroom-luxury"),
+ paving:media("paving-finished"),
+ maintenance:media("outdoor-braai-finish"),
+ ceilings:media("roof-timber-trusses")
 };
 const services=[
 ["New Builds & Construction","Foundations, brickwork, masonry, walls and carefully planned new structures.","Construction",stock.build],
@@ -24,15 +25,25 @@ const services=[
 ["Ceilings & Interior Finishes","Detailed ceiling work and interior finishes to complete your project.","Finishing",stock.ceilings]
 ];
 const projects=[
-["Residential Building","Construction",stock.build],
-["Modern Bathroom Finishes","Bathrooms",stock.bathroom],
-["Home Renovation","Renovations",stock.renovation],
-["Roofing & Structural Works","Roofing",stock.roofing],
-["Interior Painting & Finishes","Finishing",stock.painting],
-["Paving & Outdoor Work","Paving",stock.paving],
-["Wall Finishing","Finishing",stock.plaster],
-["Home Improvements","Renovations",stock.maintenance],
-["Modern Interior Finishes","Bathrooms",stock.ceilings]
+["Modern Two-Storey Building","Construction",media("modern-double-storey")],
+["Luxury Bathroom Renovation","Bathrooms",media("bathroom-luxury")],
+["Concrete & Masonry Construction","Construction",media("construction-site")],
+["Timber Roof Truss Structure","Roofing",media("roof-timber-trusses")],
+["Completed Driveway Paving","Paving",media("paving-finished")],
+["Prefabricated Home & Porch","Construction",media("new-home-porch")],
+["Contemporary Bathroom Vanity","Bathrooms",media("bathroom-vanity")],
+["Roof Tile Installation","Roofing",media("roof-tile-installation")],
+["Driveway Paving Work","Paving",media("paving-installation")],
+["Boundary Wall Brickwork","Construction",media("boundary-wallwork")],
+["Outdoor Braai Installation","Finishing",media("outdoor-braai-finish")],
+["Ceilings & Interior Braai","Finishing",media("interior-ceilings")],
+["Blockwork Building Extension","Construction",media("building-block-structure")],
+["New Home Exterior","Construction",media("completed-home")],
+["Bathroom Fixtures & Finishes","Bathrooms",media("bathroom-modern")],
+["Painted Boundary Wall","Finishing",media("perimeter-wall")],
+["Finished Outdoor Fireplace","Finishing",media("outdoor-fireplace")],
+["Wall Construction & Renovations","Renovations",media("brickwork-extension")],
+["Masonry Wall in Progress","Construction",media("masonry-wall")]
 ];
 const faq=[
 ["How do I request a quotation?","You can use the contact form or send us a WhatsApp message on +27 83 320 4202 with your name, project type, requirements and any available measurements or photos."],
