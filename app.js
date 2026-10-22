@@ -10,7 +10,7 @@ const stock={
  roofing:media("roof-tile-installation"),
  bathroom:media("bathroom-luxury"),
  paving:media("paving-finished"),
- maintenance:media("outdoor-braai-finish"),
+ maintenance:media("paving-installation"),
  ceilings:media("roof-timber-trusses")
 };
 const services=[
@@ -92,8 +92,8 @@ function initHeadings(){if(headingObserver)headingObserver.disconnect();headingO
 function animateHeading(el){const text=el.dataset.text.replace(/<br>/g,"\n");el.style.whiteSpace="pre-line";el.classList.add("typing");let i=0;const typing=setInterval(()=>{el.textContent=text.slice(0,++i);if(i>=text.length){clearInterval(typing);el.classList.remove("typing");}},Math.max(20,Math.floor(1100/Math.max(1,text.length))));}
 const slides=[
 {top:"WE BUILD",typing:"WITH PURPOSE.",desc:"From the foundation to the finishing touch, we bring care, skill and attention to every project."},
-{top:"RENEW YOUR",typing:"LIVING SPACE.",desc:"Thoughtful renovations, modern bathroom finishes, painting and detailed interior improvements."},
-{top:"STRONG WORK.",typing:"LASTING RESULTS.",desc:"From paving and roofing to masonry and property maintenance — let's build it right."}
+{top:"NEW SPACES",typing:"BUILT STRONG.",desc:"Real new-build and extension projects, with solid structures and attention to the finishing details."},
+{top:"BEAUTIFUL",typing:"FINISHES.",desc:"Explore our actual bathroom installations, polished finishes, tiling and thoughtful interior upgrades."}
 ];
 let active=0,heroTimer,typingTimer,progressTimer,heroStart=Date.now();
 function heroSlide(i){
